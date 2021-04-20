@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0">-->
+    <title>Min profil</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=../Css/Style.css />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>
+    <script src="../Js/Scripts.js"></script>
+    <script src="Js/Mig.js"></script>
+    <script src="Js/Cv.js"></script>
+    <script src="Js/Linkedin.js"></script>
+    <script src="Js/Instagram.js"></script>
+    <script src="Js/Mail.js"></script>
+    <script src="Js/StängForm.js"></script>
+    <script src="Js/SkickaMail.js"></script>
+    <script src="Js/LaddaCV.js"></script>
+    <script src="Js/utbildning.js"></script>
+    <script src="Js/kontakt.js"></script>
+    <script src="Js/Kopiera-info.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="inner-width">
+            <a href="/" class="logo"></a>
+            <button class="menu-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="navbar-menu" id="navbar-menu">
+                <ul>
+                    <li><a onclick="sudda()" href="#"><i class="fas fa-user-alt"></i>Om mig</a></li>
+                    <li><a onclick="utbildning()" href="#"><i class="fas fa-graduation-cap"></i>Utbildning</a></li>
+                    <li><a onclick="kontaktDel()" href="#"><i class="fas fa-address-book"></i>Kontakt</a></li>
+                    <li><a onclick="CV()" href="#"><i class="fas fa-id-card"></i>CV</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section id="OmMig">
+        <div class="inner-width">
+            <div id="sida1" class="content">
+                <h1 id="presentation">Hej! Jag </h1>
+                <div id="symboler" class="sm">
+                    <a onclick="mail()" href="#"><i class="fa fa-envelope"></i> </a>
+                    <a onclick="link()" href="#"><i class="fab fa-linkedin-in"> </i> </a>
+                    <a onclick="inst()" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div id="knappar" class="buttons">
+                    <a onclick="kontaktDel()" href="#">Kontakta mig</a>
+                    <a id="link" href="#">Ladda ner CV</a>
+                </div>
+            </div>
+            <div id="tillForm" class="contact-section" hidden>
+
+                <div class="xKnapp">
+                    <a onclick="stäng()" href="#" class="fa fa-close"></a>
+                </div>
+
+                <h1>Kontakta mig</h1>
+                <div class="border"></div>
+                <form class="contact-section" method="get">
+                    <input type="text" id="namn" class="contact-form-text" placeholder="Ditt namn" />
+                    <input type="email" id="email" class="contact-form-text" placeholder="Din email" />
+                    <input type="text" id="ämne" class="contact-form-text" placeholder="Ämne" />
+                    <textarea id="meddelande" class="contact-form-text" placeholder="Ditt meddelande"></textarea>
+                    <input onclick="submitForm()" type="button" class="contact-form-btn" value="Skicka" />
+                </form>
+            </div>
+
+
+
+            <div id="sida2" style="display:none">
+                <p id="para1">
+                    Jag är uppvuxen på landet i Kareby, nu mera bor jag i en bostadsrätt i centrala Kungälv.
+                    På fritiden brukar jag spela golf (när vädret tillåter), träna, spela datorspel, umgås med familj och vänner.
+                    Jag har bra arbetsmoral och har vanligtvis lätt för att lära mig när jag sätter mig in i någonting nytt.
+                    Jag har ett stort sug på problem lösning, då jag ofta spelar spel som kräver lite hjärngymnastik.
+                    Därför passar programmeringsyrket mig perfekt!
+                </p>
+                <p id="para2">
+                    Jag gick en två årig utbildning på humanus yrkeshögskola (nu mera handels yrkeshögskola) med praktik under båda åren.
+                    På praktiken arbetade jag på Celab AB. När jag arbetade fick jag jobba självständigt och frågade efter hjälp när jag fastnat lite för länge.
+                    Jag använde program så som C#, XML, SQL, JavaScript, HTML och CSS.
+                    Praktiken var en väldigt lärorik och givande tid, jag lärde mig väldigt mycket.
+                    Men jag har fortfarande mycket att lära och ser fram emot utmaningen, jag hoppas att få ett arbete med programmering snart så jag får jobba med det varje dag.
+                    Jag har mestadels arbetat med C#, men jag vill gärna lära mig mer CSS och JavaScript då jag fortfarande är nybörjare.
+
+                </p>
+                <p id="para3"> Om det är någonting mer ni vill veta så är det bara att ringa. Hoppas att höra ifrån er snart. </p>
+                <p id="pNamn">Daniel Rydqvist</p>
+
+            </div>
+
+            <div id="sida3" style="display:none">
+                <ul>
+                    <li>
+                        <span class="kurs">Kurs</span>
+                        <span class="betyg">Betyg</span>
+                        <span class="datum">Datum</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Introduktion till systemutveckling</span>
+                        <span class="betyg">VG</span>
+                        <span class="datum">2018-10-29</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Introduktion till objektorientering</span>
+                        <span class="betyg">G</span>
+                        <span class="datum">2018-11-05</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Objektorienterad programmering - Grundläggande</span>
+                        <span class="betyg">VG</span>
+                        <span class="datum">2019-01-22</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Objektorienterad analys</span>
+                        <span class="betyg">VG</span>
+                        <span class="datum">2019-03-25</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Objektorienterad design</span>
+                        <span class="betyg">VG</span>
+                        <span class="datum">2019-04-02</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Databaser</span>
+                        <span class="betyg">G</span>
+                        <span class="datum">2019-05-10</span>
+                    </li>
+                    <li>
+                        <span class="kurs">LIA 1, Lärande i arbete (Praktik)</span>
+                        <span class="betyg">VG</span>
+                        <span class="datum">2019-06-26</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Agil projektledning</span>
+                        <span class="betyg">G</span>
+                        <span class="datum">2019-09-26</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Webbapplikationer</span>
+                        <span class="betyg">VG</span>
+                        <span class="datum">2019-11-27</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Objektorienterad programmering - Avancerad</span>
+                        <span class="betyg">G</span>
+                        <span class="datum">2020-02-24</span>
+                    </li>
+                    <li>
+                        <span class="kurs">LIA 2, lärande i arbete (Praktik)</span>
+                        <span class="betyg">VG</span>
+                        <span class="datum">2020-05-25</span>
+                    </li>
+                    <li>
+                        <span class="kurs">Examensarbete</span>
+                        <span class="betyg">G</span>
+                        <span class="datum">2020-06-01</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="kontakt" class="contact-info" style="display:none">
+                <div onclick="kopieraEmail()" class="card">
+                    <i class="icon fas fa-envelope"></i>
+                    <div class="card-content">
+                        <h3>Email</h3>
+                        <span id="kopEmail">rydqvist92@gmail.com</span>
+
+                    </div>
+                </div>
+                <div onclick="kopieraTel()" class="card">
+                    <i class="icon fas fa-phone"></i>
+                    <div class="card-content">
+                        <h3>Telefonnummer</h3>
+                        <span id="kopTel">076-9462-022</span>
+
+                    </div>
+                </div>
+                <div onclick="mail()" class="card2">
+                    <i class="icon far fa-edit"></i>
+                    <div class="card-content">
+                        <h3 class="nyklass">Skriv direkt</h3>
+                        <span id="skickaDirekt">Skicka mail via webbapplikationen</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="laddare" class="laddareKlass" style="display:none">
+                <div class="loader"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+</body>
+
+
+
+</html>
