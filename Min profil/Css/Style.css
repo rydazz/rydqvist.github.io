@@ -1,0 +1,717 @@
+﻿body {
+}
+*{
+    margin : 0;
+    padding : 0;
+    text-decoration : none;
+    font-family : 'Franklin Gothic';
+    box-sizing : border-box;
+}
+.navbar {
+    position : fixed;
+    background-color : transparent;
+    width : 100%;
+    padding : 30px, 0;
+    top : 0;
+    z-index : 999;
+    transition : .3s linear;
+}
+
+.inner-width{
+    max-height : 1300px;
+    margin : auto;
+    padding : 0 40px;
+}
+
+.navbar .inner-width{
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+}
+
+.logo{
+    width : 44px;
+    height: 32px;
+}
+
+.menu-toggler{
+    background : none;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    z-index: 999;
+    display: none;
+}
+
+.menu-toggler span{
+    display: block;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    position: relative;
+    transition: .3s linear;
+}
+
+#navbar-menu {
+    width: 100vw;
+  
+
+}
+
+#navbar-menu ul {
+    list-style: none;
+    margin : 0;
+    display : flex;
+    justify-content : flex-end;
+    align-items : center;
+    padding : 1em 0;
+
+}
+
+#navbar-menu li a {
+    text-decoration: none;
+    color: white;
+    padding-right: 3em;
+    position: relative;
+    font-size: 25px;
+    transition: all ease-in-out 250ms;
+}
+
+#navbar-menu li a::after{
+    content: "";
+    position : absolute;
+    display : block;
+    height : 0.4em;
+    width : 0%;
+    background-color : #057508;
+    bottom : -0.5em;
+    transition : all ease-in-out 250ms;
+    z-index : -1;
+    border-radius : 15px;
+    
+}
+
+#navbar-menu li a:hover {
+    color: #057508;
+}
+
+#navbar-menu li a:hover::after {
+    width : 72%;
+}
+
+#navbar-menu li:last-child a:hover::after{
+    width : 60%;
+}
+
+#navbar-menu li:first-child a:hover::after {
+    width: 67%;
+}
+
+#navbar-menu li:nth-child(3) a:hover::after {
+    width: 67%;
+}
+
+
+#navbar-menu a i {
+    margin : 10px;
+}
+
+.sticky{
+    background-color: #fff;
+    padding: 18px 0;
+}
+
+.sticky .navbar-menu a{
+    color: #111;
+}
+
+
+#OmMig {
+    height: 100vh;
+    min-height: 500px;
+    background: url(../Wallpaper/keyboard_keys_letters_170515_1920x1080.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#OmMig .inner-width{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+#OmMig .content{
+    width: 100%;
+    color: #fff;
+}
+
+#OmMig .content h1{
+    font-size: 60px;
+    margin-bottom: 60px;
+}
+
+#OmMig .content h1::after{
+    content: "heter Daniel";
+    animation: textanim 10s linear infinite;
+}
+
+@keyframes textanim{
+    25%{
+        content: "är programmerare";
+    }
+    50%{
+        content: "är snabblärd";
+    }
+    75%{
+        content: "är arbetsvillig"
+    }
+}
+
+.sm a{
+/*    color: #fff;
+    font-size: 22px;
+    margin: 0 10px;
+    transition: .2s linear;*/
+
+
+    height : 100vh;
+    display : inline-flex;
+    justify-content : center;
+    align-items : center;
+    /*background : green;*/
+    font-size : 25px;
+    width : 60px;
+    height : 60px;
+    color : #fff;
+    position : relative;
+    margin : 0 8px;
+}
+
+.sm a:hover {
+    color: #26cf0d;
+}
+
+.sm a::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #26cf0d, #057508);
+    border-radius: 50%;
+    z-index: -1;
+    transition : 0.3s ease-in;
+}
+
+.sm a:hover::before{
+    transform : scale(0);
+}
+
+.sm a i{
+    transition : 0.3s ease-in;
+}
+
+.sm a:hover i {
+/*    background: linear-gradient(45deg, #26cf0d, #057508);
+    -webkit-text-fill-color: transparent;*/
+    transform: scale(2.2);
+}
+
+#OmMig .buttons{
+    margin-top: 60px;
+}
+
+#OmMig .buttons a {
+    display: inline-block;
+    margin: 15px 30px;
+    color: #26cf0d;
+    font-size: 15px;
+    font-weight: 500;
+    width: 180px;
+    border: 1px solid #73AD21;
+    padding: 14px 0;
+    border-radius: 6px;
+    transition: .2s linear;
+}
+
+#OmMig .buttons a:hover /*,
+#OmMig .buttons a:nth-child(2) */ {
+    background-color: #26cf0d;
+    Color: #fff;
+}
+
+@media screen and (max-width: 1000px){
+    .menu-toggler{
+        display: block;
+    }
+    .navbar-menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background-color: #353b48;
+        top: 0;
+        right: -100%;
+        max-width: 400px;
+        padding: 80px 50px;
+        transition: .3s linear;
+    }
+    #navbar-menu ul{
+        display : inline-grid;
+    }
+
+    #navbar-menu li a:hover::after {
+        width: 72%;
+    }
+
+    #navbar-menu li:last-child a:hover::after {
+        width: 38%;
+    }
+
+    #navbar-menu li:first-child a:hover::after {
+        width: 63%;
+    }
+
+    #navbar-menu li:nth-child(3) a:hover::after {
+        width: 58%;
+    }
+
+    .navbar-menu a{
+        display: block;
+        font-size: 30px;
+        margin: 30px 0;
+    }
+
+    .sticky .navbar-menu{
+        background-color: #f1f1f1;
+    }
+
+    .navbar-menu.active {
+        right: 0;
+    }
+
+    .menu-toggler.active span:nth-child(1){
+        transform: rotate(-45deg);
+        top: 4px;
+    }
+    .menu-toggler.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggler.active span:nth-child(3) {
+        transform: rotate(45deg);
+        bottom: 14px;
+    }
+}
+
+#sida2 {
+    /*box-sizing : border-box;*/
+    border: inset;
+    background-color: black;
+    position: center;
+    height: 890px;
+    width: 750px;
+    position: absolute;
+    top: 70px;
+    transition: .5s ease-in;
+    /*filter: blur(4px);*/
+}
+
+#sida2.buttons {
+    transition : .5s ease-in;
+}
+p {
+    color: white;
+    transition: .2s ease-in;
+    /*position: center;*/
+    font-size: 24px;
+    text-justify: inter-ideograph;
+    padding: 30px;
+    text-shadow: 0 0 2px #fff;
+    word-spacing: 5px;
+    word-break: keep-all;
+    filter: blur(0px);
+}
+#pNamn {
+    font-size: 32px;
+}
+#para1:hover {
+    color: #26cf0d;
+}
+#para2:hover {
+    color: #26cf0d;
+}
+#para3:hover {
+    color: #26cf0d;
+}
+#pNamn:hover {
+    color: #26cf0d;
+}
+
+
+#tillForm {
+    /*        transition-property: all;
+    transition: .3s ease-in;
+    border: inset;*/
+    height: 70%;
+    width: 60%;
+    position: relative;
+    background-color: black;
+    /*    left: 500px;
+    top: 40px;*/
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    /*right : 500px;*/
+    transition: all ease-in-out 250ms;
+}
+
+.xKnapp a {
+    color: white;
+    font-size: 38px;
+    /*margin: 0 10px;*/
+    right : 10px;
+    top : 5px;
+    position : absolute;
+    transition: .2s linear;
+}
+
+.xKnapp a:hover {
+    color: #26cf0d;
+}
+.contact-section {
+    background: url(Clean-Wallpapers-HD-001.jpg) no-repeat center;
+    background-size : cover;
+    padding : 40px 0;
+}
+.contact-section h1{
+    text-align : center;
+    color : #ddd;
+}
+.border {
+    width: 100px;
+    height: 10px;
+    background: #73AD21;
+    margin: 40px auto;
+}
+
+.contact-form {
+    max-width : 600px;
+    margin : auto;
+    padding : 0 10px;
+    overflow : hidden
+}
+
+.contact-form-text{
+    display : block;
+    width : 100%;
+    box-sizing : border-box;
+    margin : 16px 0;
+    border : 0;
+    background : #111;
+    padding : 20px 40px;
+    outline : none;
+    color : #ddd;
+    transition : 0.5s;
+
+}
+
+.contact-form-text:focus {
+    box-shadow: 0 0 10px 4px #73AD21;
+}
+textarea.contact-form-text{
+    resize : none;
+    height : 150px;
+}
+
+.contact-form-btn {
+
+    display: inline-block;
+    margin: 15px 30px;
+    color: #26cf0d;
+    font-size: 15px;
+    font-weight: 500;
+    width: 180px;
+    border: 1px solid #73AD21;
+    padding: 14px 0;
+    border-radius: 6px;
+    transition: .2s linear;
+    background-color : transparent;
+}
+.contact-form-btn:hover {
+    background: #26cf0d;
+    color: #fff;
+}
+
+#sida3 ul {
+    position : relative;
+    width : 1400px;
+    margin : 100px auto 0;
+    padding : 10px;
+    box-sizing : border-box;
+    background : rgba(0,0,0,.1);
+    box-shadow : inset 0 0 15px rgba(0,0,0,.2);
+    border-radius : 5px;
+    overflow : hidden;
+}
+
+#sida3 ul li {
+    display : flex;
+    background : rgba(255,255,255,.1);
+    padding : 10px 20px;
+    color : #fff;
+    margin : 5px 0;
+    transition : .5s;
+}
+
+#sida3 ul li:nth-child(1) {
+    background: black;
+    text-transform: uppercase;
+    transform : scale(1.06);
+    border : thick #353b48;
+}
+#sida3 ul li:nth-child(1) span:nth-child(3) {
+    position : relative;
+    right : 50px;
+}
+#sida3 ul li:nth-child(1):hover{
+    /*transform : scale(1);*/
+    background : black;
+}
+
+#sida3 ul li:nth-child(2) {
+    background: rgba(255,255,255,.1);
+}
+
+#sida3 ul li:nth-child(3) {
+    background: rgba(255,255,255,.1);
+}
+/*#sida3 ul li span:nth-child(3):hover {*/
+    /*width: 300px;*/
+    /*position: relative;
+    right: 50px;
+}*/
+
+#sida3 ul li span:nth-child(1){
+    width : 500px;
+}
+#sida3 ul li span:nth-child(2) {
+    width: 500px;
+}
+#sida3 ul li span:nth-child(3) {
+    width: 300px;
+    text-align : right;
+}
+#sida3 ul li span:nth-child(4) {
+    width: 70px;
+    text-align: right;
+}
+
+#sida3 ul li:hover{
+    transform : scale(1.06);
+    background : #73AD21;
+}
+
+.contact-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+.card {
+    flex: 1;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    max-width: 300px;
+    width: 100%;
+    height: 140px;
+    cursor: pointer;
+    background: url(../Wallpaper/487691.jpg);
+    display: inline-table;
+    border-radius : 5%;
+    border : inset;
+}
+
+.icon {
+    font-size: 32px;
+    color: #26cf0d;
+    transition: .3s linear;
+    position : absolute;
+    left : 45%;
+    top : 40%;
+    transform : translateX(-50%, -50%);
+    
+}
+
+
+.card:hover .icon{
+    transform : scale(4);
+    opacity : 0;
+}
+
+.card-content h3,
+.card-content span{
+    position : absolute;
+    left : 50%;
+    transform : translateX(-50%);
+    font-size : 16px;
+    opacity : 0;
+}
+
+
+.card2 {
+    flex: 1;
+    /*display: flex;*/
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    max-width: 300px;
+    width: 100%;
+    height: 140px;
+    cursor: pointer;
+    background: url(../Wallpaper/487691.jpg);
+    display: inline-table;
+    border-radius: 5%;
+    border: inset;
+}
+
+
+
+.card2:hover .icon {
+    transform: scale(4);
+    opacity: 0;
+}
+
+
+.card2:hover h3 {
+    opacity: 1;
+    top: 38px;
+    transition: .3s linear .3s;
+}
+
+.card2:hover span {
+    opacity: 1;
+    bottom: 38px;
+    transition: .3s linear .3s;
+}
+
+
+.card-content h3{
+    top : 20px;
+    text-transform : uppercase;
+    color : #26cf0d;
+}
+
+.card-content span{
+    bottom : 20px;
+    color : #fff;
+    font-weight : 500;
+}
+
+.card-content2 h3 {
+    top: 30px;
+    text-transform: uppercase;
+    color: #26cf0d;
+}
+
+.card-content2 span {
+    bottom: 30px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.card-content2 h3,
+.card-content2 span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+}
+
+.card:hover h3{
+    opacity : 1;
+    top : 46px;
+    transition : .3s linear .3s;
+    
+}
+
+.nyklass {
+    top: 30px;
+    opacity: 0;
+    /*transition: .3s linear .3s;*/
+    transform: translateY(50%);
+}
+
+.nyklass:hover {
+    opacity: 1;
+    top: 46px;
+    transition: .3s linear .3s;
+}
+.card:hover span {
+    opacity: 1;
+    bottom: 46px;
+    transition: .3s linear .3s;
+}
+
+@media screen and (max-width:900px){
+    .card{
+        flex : 100%;
+        max-width : 300px;
+
+    }
+
+    .card2 {
+        flex: 100%;
+        max-width: 300px;
+    }
+}
+
+#laddare{
+    width : 50px;
+    height : 50px;
+    background-color : transparent;
+    position : fixed;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+
+}
+
+.loader{
+    width : 50px;
+    height : 50px;
+    border : 5px solid;
+    color : #3498db;
+    border-radius : 50%;
+    border-top-color : transparent;
+    animation : loader 1.2s linear infinite;
+}
+
+@keyframes loader{
+    25%{
+        color : #2ecc71;
+    }
+
+    50%{
+        color : #f1c40f;
+    }
+
+    75%{
+        color : #e74c3c;
+    }
+    to{
+        transform : rotate(360deg);
+    }
+}
+
+
+
+
+
